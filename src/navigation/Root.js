@@ -31,9 +31,23 @@ const RootNavigator = (props) => {
                 <Drawer.Screen name="Running">
                     {() => <DummyScreen name={"Running"}/>}
                 </Drawer.Screen>
+                <Drawer.Screen name="Statistics">
+                    {() => <DummyScreen name={"Statistics"}/>}
+                </Drawer.Screen>
                 <Drawer.Screen name="Rewards">
                     {() => <DummyScreen name={"Rewards"}/>}
                 </Drawer.Screen>
+                <Drawer.Screen name="Schedule">
+                    {() => <DummyScreen name={"Schedule"}/>}
+                </Drawer.Screen>
+                <Drawer.Screen name="Settings">
+                    {() => <DummyScreen name={"Settings"}/>}
+                </Drawer.Screen>
+                <Drawer.Screen name="Sign Out">
+                    {() => <DummyScreen name={"Sign Out"}/>}
+                </Drawer.Screen>
+
+
             </Drawer.Navigator>
         </NavigationContainer>
     );
