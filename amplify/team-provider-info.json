@@ -1,0 +1,21 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-sudarshan-staging-122547-authRole",
+      "UnauthRoleArn": "arn:aws:iam::597023384851:role/amplify-sudarshan-staging-122547-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::597023384851:role/amplify-sudarshan-staging-122547-authRole",
+      "Region": "ap-south-1",
+      "DeploymentBucketName": "amplify-sudarshan-staging-122547-deployment",
+      "UnauthRoleName": "amplify-sudarshan-staging-122547-unauthRole",
+      "StackName": "amplify-sudarshan-staging-122547",
+      "StackId": "arn:aws:cloudformation:ap-south-1:597023384851:stack/amplify-sudarshan-staging-122547/a5cc3510-cd0b-11eb-b293-0ac84c98dc74",
+      "AmplifyAppId": "d3kz7e5kda4lny",
+      "AuthTriggerTemplateURL": ""
+    },
+    "categories": {
+      "auth": {
+        "Sudarshan": {}
+      }
+    }
+  }
+}
