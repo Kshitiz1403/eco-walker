@@ -6,8 +6,6 @@ import LocationCard from "../components/LocationCard";
 import {useNavigation, useRoute} from "@react-navigation/native";
 import RBSheet from "react-native-raw-bottom-sheet";
 
-
-
 const Directions = () => {
 
 
