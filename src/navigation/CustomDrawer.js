@@ -22,7 +22,7 @@ export default CustomDrawer;
 
 const styles = StyleSheet.create({
     profile:{
-        marginVertical:5,
+        marginBottom:5,
         marginHorizontal:10,
         flexDirection:'row',
         alignItems:'center',
