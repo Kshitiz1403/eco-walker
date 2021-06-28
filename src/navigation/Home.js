@@ -26,7 +26,7 @@ const HomeNavigator = (props) => {
             {/*<Stack.Screen name="Onboarding1" component={Onboarding1}/>*/}
             {/*<Stack.Screen name="Onboarding2" component={Onboarding2}/>*/}
             {/*<Stack.Screen name="Onboarding3" component={Onboarding3}/>*/}
-            {/*<Stack.Screen name="Onboarding" component={Onboarding}/>*/}
+            {/*/!*<Stack.Screen name="Onboarding" component={Onboarding}/>*!/*/}
 
             {/*<Stack.Screen name="Welcome" component={Welcome}/>*/}
             {/*<Stack.Screen name="Login" component={Login}/>*/}
