@@ -16,9 +16,12 @@ const Directions = () => {
     // console.log(route.params)
 
     const details = route.params
-    const refRBSheet = useRef();
+    // const refRBSheet = useRef();
+
+    // console.log(details['geometry']['location']['lat'])
     //
     // const lat = details.geometry.location.lat;
+
     // const lng = details.geometry.location.lng;
     //
     // console.log(lat)
