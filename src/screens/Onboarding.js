@@ -1,9 +1,10 @@
 import React from 'react'
-import {useState} from "react";
-import {View, Text, StyleSheet, FlatList, TouchableOpacity,} from 'react-native'
+import { useState, useRef } from "react";
+import { View, Text, StyleSheet, FlatList, TouchableOpacity, Animated } from 'react-native'
 import slides from "../components/slides";
 import OnboardingItems from "../components/OnboardingItems";
 import Dots from 'react-native-dots-pagination';
+import Paginator from '../components/Paginator';
 
 import {
     useFonts,
@@ -25,9 +26,25 @@ const Onboarding = () => {
         Quicksand_700Bold,
     });
 
+    const [currentIndex, setCurrentIndex] = useState(0)
+
+    const viewableItemsChanged = useRef(({ viewableItems }) => { setCurrentIndex(viewableItems[0].index) }).current
+
+    const scrollX = useRef(new Animated.Value(0)).current
+
+    const viewConfig = useRef({
+        viewAreaCoveragePercentThreshold: 50
+    }).current;
+
+    const slidesRef = useRef(null)
+
+
+
     if (!fontsLoaded) {
-        return <AppLoading/>;
+        return <AppLoading />;
     } else {
+
+    
         return (
             <View style={styles.container}>
                 <FlatList
@@ -38,9 +55,23 @@ const Onboarding = () => {
                     showsHorizontalScrollIndicator={false}
                     keyExtractor={(item) => item.id}
                     // bounces={false}
-                    renderItem={({item}) => <OnboardingItems item={item}/>}
+                    renderItem={({ item }) => <OnboardingItems item={item} />}
+
+                    onScroll={Animated.event([{ nativeEvent: { contentOffset: { x: scrollX } } }], { useNativeDriver: false })}
+
+                    onViewableItemsChanged={viewableItemsChanged}
+                    viewabilityConfig={viewConfig}
+                    ref={slidesRef}
+
                 />
-                <View style={{
+                <View style={{position:'absolute', bottom:'5%'}}>
+                <Paginator data = {slides} scrollX={scrollX}/>
+                </View>
+
+
+
+
+                {/* <View style={{
                     position: 'absolute',
                     bottom: '10%',
                     alignSelf: 'center'
@@ -53,13 +84,13 @@ const Onboarding = () => {
                 </View>
                 <TouchableOpacity
                     style={styles.button}
-                    // onPress={() => this.flatlist.scrollToIndex({ index: 0 })}
-                    // onPress={() => navigation.navigate('Onboarding2')}
+                // onPress={() => this.flatlist.scrollToIndex({ index: 0 })}
+                // onPress={() => navigation.navigate('Onboarding2')}
                 >
                     <Text style={styles.buttonText}>
                         Next
                     </Text>
-                </TouchableOpacity>
+                </TouchableOpacity> */}
                 {/*</View>*/}
             </View>
         )

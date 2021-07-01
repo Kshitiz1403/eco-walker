@@ -11,7 +11,6 @@ const OnboardingItems = ({item}) => {
         <View style={[styles.container, {width}]}>
             <ImageBackground source={item.image} style={[styles.image, {width}]}/>
 
-
                 <Text style={styles.title}>{item.title}</Text>
 
                 <View style={styles.subtitle}>
