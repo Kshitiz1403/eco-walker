@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {GooglePlacesAutocomplete, GooglePlaceData, GooglePlaceDetail,} from 'react-native-google-places-autocomplete';
 import * as Location from 'expo-location';
 import {useNavigation} from "@react-navigation/native";
+import placesAPIkey from './placesAPIkey';
 
 
 const homePlace = {
@@ -44,7 +45,7 @@ const GooglePlacesInput = (props) => {
             //     fields: ['formatted_address','geometry', 'photo']
             // }}
             query={{
-                key: 'AIzaSyD3p65xxzAhd66hBztDi_9K0awHnxpIMEk',
+                key: placesAPIkey.key,
                 language: 'en',
                 components: 'country:in',
             }}
