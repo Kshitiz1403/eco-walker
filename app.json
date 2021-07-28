@@ -25,9 +25,9 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "config":{
-        "googleMaps":{
-          "apiKey":"AIzaSyAaC_ApD4XU2c5TKy8SOJTB89-AnlEvwWg"
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyAaC_ApD4XU2c5TKy8SOJTB89-AnlEvwWg"
         }
       },
       "package": "com.kshitiz1403.Sudarshan"
