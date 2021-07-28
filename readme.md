@@ -3,7 +3,7 @@
 
   
 
-## About
+## 📲 About
 
   
 We ask users to jog, collect waste while jogging, we measure the waste
