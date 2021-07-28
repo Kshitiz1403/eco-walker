@@ -39,7 +39,6 @@ their performance.
 
   
 
-- Note: **_You will need an account on Expo in order to view the app!_**
 
   
 
