@@ -16,12 +16,12 @@ const RunningMap = ({ navigation }) => {
 
       <View style={styles.backgroundStyle}>
         {/* Hamburger Touchable Opacity */}
-        <TouchableOpacity onPress = {()=>{navigation.toggleDrawer()}}>
+        <TouchableOpacity onPress = {()=>{navigation.toggleDrawer()}} style={{paddingHorizontal:10}}>
           <FontAwesome name="navicon" size={24} color="black" />
         </TouchableOpacity>
 
         {/* SearchBar */}
-        <Pressable style={{ flex: 1, flexDirection: "row", }} onPress={() => navigation.navigate(SearchScreen)}>
+        <Pressable style={{ flex: 1,flexDirection: "row", }} onPress={() => navigation.navigate(SearchScreen)}>
           <SearchBar placeholder={"Where are you going to?"} />
         </Pressable>
       </View>

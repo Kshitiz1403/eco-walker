@@ -1,9 +1,11 @@
-import React, {useRef} from "react";
+import React, {useRef, useMemo} from "react";
 import {View, Text, StyleSheet, TouchableOpacity, Dimensions, Pressable, Button} from "react-native";
 import {FontAwesome} from "@expo/vector-icons";
 import Map from '../components/Map'
 import LocationCard from "../components/LocationCard";
 import {useNavigation, useRoute} from "@react-navigation/native";
+import BottomSheet from '@gorhom/bottom-sheet';
+
 import RBSheet from "react-native-raw-bottom-sheet";
 
 
@@ -25,6 +27,8 @@ const Directions = () => {
     // const lng = details.geometry.location.lng;
     //
     // console.log(lat)
+    // const snapPoints = useMemo(() => ['1%', '20%'], []);
+const snapPoints=['1%','20%','60%']
 
     return (
 
@@ -33,6 +37,7 @@ const Directions = () => {
             {/* Map */}
             <Map/>
 
+
             <View style={styles.backgroundStyle}>
                 {/* Back Button */}
                 <TouchableOpacity onPress = {()=>{navigation.navigate('SearchScreen')}}>
@@ -40,10 +45,24 @@ const Directions = () => {
                 </TouchableOpacity>
             </View>
 
+            {/*<View style={styles.locationContainer}>*/}
+            {/*    <LocationCard locationName = "Location Name"/>*/}
+            {/*</View>*/}
 
-            <View style={styles.locationContainer}>
-                <LocationCard locationName = "Location Name"/>
-            </View>
+            <BottomSheet
+                index={1}
+                snapPoints={snapPoints}
+                // onChange={handleSheetChanges}
+            >
+                <View style={styles.locationContainer}>
+                    <LocationCard locationName = "Location Name"/>
+                </View>
+                {/*<View style={styles.contentContainer}>*/}
+                {/*    <Text>Awesome 🎉</Text>*/}
+                {/*</View>*/}
+            </BottomSheet>
+
+
         </View>
     )
 }
@@ -62,12 +81,15 @@ const styles = StyleSheet.create({
     },
     locationContainer: {
         position: 'absolute',
-        bottom: 0,
+        // bottom: 0,
         // left: 0,
         // flex: 1,
         width: '100%',
         // height:'30%'
         // height: '50%',
     },
+    contentContainer:{
+
+    }
 
 });

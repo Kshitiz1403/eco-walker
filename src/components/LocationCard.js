@@ -1,8 +1,8 @@
 import React from 'react'
 import {StyleSheet, Text, View, Image, FlatList, TouchableOpacity, TouchableHighlight,} from 'react-native'
 import Data from '../../DustbinLocation';
+import {BottomSheetFlatList} from "@gorhom/bottom-sheet";
 // import RBSheet from "react-native-raw-bottom-sheet";
-
 
 
 const Item = ({distance, time}) => (
@@ -38,7 +38,8 @@ export default function LocationCard(props) {
                     flex: 1,
                 }}>
                     <Text style={styles.locationName}>{props.locationName}</Text>
-                    <Text style={styles.locationAddress}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a ante lorem. Praesent sagittis orci et dolor euismod </Text>
+                    <Text style={styles.locationAddress}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a
+                        ante lorem. Praesent sagittis orci et dolor euismod </Text>
                 </View>
             </View>
             <View>
@@ -67,7 +68,7 @@ export default function LocationCard(props) {
 
             </View>
             <View style={{marginHorizontal: 20}}>
-                <FlatList
+                <BottomSheetFlatList
                     horizontal={true}
                     data={Data}
                     renderItem={renderItem}
@@ -80,9 +81,14 @@ export default function LocationCard(props) {
                     <Text style={{fontSize: 17, color: '#606470'}}>Location Name</Text>
                 </View>
                 <View style={{marginVertical: 5}}>
-                    <Text style={{color: '#A5AAB7'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a ante lorem.
+                    <Text style={{color: '#A5AAB7'}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis a
+                        ante lorem.
                         335001, India</Text>
                 </View>
+                <TouchableOpacity style={styles.startButton}>
+                    <Text style={{color: 'white', fontSize: 18}}>Start</Text>
+                </TouchableOpacity>
+
             </View>
         </View>
     )
@@ -134,6 +140,17 @@ const styles = StyleSheet.create({
     },
     dustbinHeading: {
         fontSize: 20, color: '#A5AAB7'
+    },
+
+    startButton: {
+        marginVertical: 10,
+        alignSelf: 'center',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: 150,
+        height: 50,
+        backgroundColor: '#56CCF2',
+        borderRadius: 25
     }
 })
 
